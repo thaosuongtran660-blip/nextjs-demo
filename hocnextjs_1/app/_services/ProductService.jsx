@@ -28,6 +28,12 @@ const ProductService = {
     return configAPI.get(`product/${id}`);
   },
 
+  update: async (id, data) => {
+    data.append("_method", "PUT");
+
+    return await configAPI.post(`product/${id}`, data);
+  },
+
   delete: async (id) => {
     const result = await configAPI.delete(`product/${id}`);
     return result;
