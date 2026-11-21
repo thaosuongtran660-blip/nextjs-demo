@@ -32,6 +32,9 @@ const ProductService = {
     const result = await configAPI.delete(`product/${id}`);
     return result;
   },
+  getById(id) {
+    return configAPI.get(`product/${id}`);
+  },
 };
 
 export default ProductService;
